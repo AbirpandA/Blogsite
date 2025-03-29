@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const User = require('./userModel')
 
 const CommentSchema = new Schema({
     author: {
