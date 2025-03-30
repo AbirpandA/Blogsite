@@ -57,11 +57,11 @@ const login = async (req, res) => {
       return res.status(401).json({ message: "Invalid password. Enter the correct one" });
     }
     
-    const token = jwt.sign({ email: user.email }, process.env.signature, {
+    const token = jwt.sign({ user }, process.env.signature, {
       expiresIn: "1h"
     });
     
-    return res.status(200).json({ token, userId: user.email });
+    return res.status(200).json({ token, userId: user._id });
   }
   catch (err) {
     console.log(err.message);

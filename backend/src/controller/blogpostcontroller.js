@@ -5,6 +5,7 @@ const addblogs = async (req, res) => {
         const newblog = new BlogPost({
             ...req.body,
             author: req.user._id,
+            img:req.file ? req.file.path : null,
         });
 
         await newblog.save();

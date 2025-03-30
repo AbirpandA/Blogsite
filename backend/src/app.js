@@ -1,5 +1,6 @@
 const express = require("express");
 const userRoutes = require('./routes/userRoutes')
+const blogRoutes =  require('./routes/blogRoutes')
 
 
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 
 app.use('/auth', userRoutes);
+app.use('/blogs',blogRoutes)
 
 
 
